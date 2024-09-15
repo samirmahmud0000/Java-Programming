@@ -1,0 +1,33 @@
+public class ArithmeticOpts {
+    public static void main(String[] args) {
+        int a = 10,b = 5;
+
+        // Just like in C lol
+        int sum = a + b;
+        int sub = a - b;
+        int mul = a * b;
+        int div = a / b;
+
+        System.out.println("The sum is " + sum);
+        System.out.println("The sub is " + sub);
+        System.out.println("The mult is " + mul);
+        System.out.println("The div is " + div);
+
+
+        /**
+         * many of you have tried doing it directly
+         * like in C printf("The sum is %d\n", (a+b));
+         * you can do that in Java too! without the %d
+         */
+        System.out.println("The sum is " + (a + b));
+
+        /**
+         * NOTE: YOU MUST put brackets around (a+b) else Java will not add them
+         * it will CONCATENATE THEM
+         * tader add korbenah like 10 + 5 = 15
+         * but tader concatenate korbe like "10" + "5" = "105"
+         * run the code below to see what I mean
+         */
+        System.out.println("The sum is " + a + b);
+    }
+}
