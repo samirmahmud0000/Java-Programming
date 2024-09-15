@@ -1,0 +1,100 @@
+public class SwitchCase {
+    public static void main(String[] args) {
+        /**
+         * works the same way just like in C.
+         */
+        // find if a number is 1,0 or neither
+        int a = 1;
+        switch (a) {
+            case 0: {
+                System.out.println("Number is 0");
+                break;
+            }
+            case 1: {
+                System.out.println("Number is 1");
+                break;
+            }
+            default: {
+                System.out.println("Neither");
+            }
+        }
+
+        // BUT, we can REMOVE THE BREAK STATEMENT in Java
+        // this is called "Enhanced switch" (forgot its name during class)
+        switch (a) {
+            case 0 -> {
+                System.out.println("Number is 0");
+            }
+            case 1 -> {
+                System.out.println("Number is 1");
+            }
+            default -> {
+                System.out.println("Neither");
+            }
+        }
+
+
+        /**
+         * Another example:
+         * vowel/consonants using switch case
+         */
+        char ch = 'a';
+        switch (ch) {
+            case 'a': {
+                System.out.println("Vowel");
+                break;
+            }
+            case 'e': {
+                System.out.println("Vowel");
+                break;
+            }
+            case 'i': {
+                System.out.println("Vowel");
+                break;
+            }
+            case 'o': {
+                System.out.println("Vowel");
+                break;
+            }
+            case 'u': {
+                System.out.println("Vowel");
+                break;
+            }
+            default: {
+                System.out.println("Consonant");
+            }
+        }
+        // this is a PAIN! Baar baar copy paste korar kono dorkar nai in Java!
+
+
+        // here's a better version, case 'a', 'e', 'i', 'o' jei kono ekta pass korle o vowel,
+        // remove the break from all of them, and then just put it on 'u'
+        switch (ch) {
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u': {
+                System.out.println("Vowel");
+                break;
+            }
+            default: {
+                System.out.println("Consonant");
+            }
+        }
+        // there's a much better better way!
+
+
+        // jehetu 'a', 'e', 'i', 'o', 'u' gives same output (Vowel). Why not group them?
+        // see code below
+        switch (ch) {
+            case 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' -> {
+                System.out.println("Vowel");
+            }
+            default -> {
+                System.out.println("Consonant");
+            }
+        }
+
+    }
+}
