@@ -1,0 +1,91 @@
+public class AccountHolderModel {
+
+    static class AccountHolder {
+        private String name;
+        private int id;
+        private String email;
+        private String address;
+        private String phoneNumber;
+        private double accountBalance;
+
+        public AccountHolder(String name, int id, String email, String address, String phoneNumber, double accountBalance) {
+            this.name = name;
+            this.id = id;
+            this.email = email;
+            this.address = address;
+            this.phoneNumber = phoneNumber;
+            this.accountBalance = accountBalance;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getAddress() {
+            return address;
+        }
+
+        public void setAddress(String address) {
+            this.address = address;
+        }
+
+        public String getPhoneNumber() {
+            return phoneNumber;
+        }
+
+        public void setPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+        }
+
+        public double getAccountBalance() {
+            return accountBalance;
+        }
+
+        public void setAccountBalance(double accountBalance) {
+            this.accountBalance = accountBalance;
+        }
+
+        @Override
+        public String toString() {
+            return "AccountHolder{" +
+                    "name='" + name + '\'' +
+                    ", id=" + id +
+                    ", email='" + email + '\'' +
+                    ", address='" + address + '\'' +
+                    ", phoneNumber='" + phoneNumber + '\'' +
+                    ", accountBalance=" + accountBalance +
+                    '}';
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        AccountHolder holder1 = new AccountHolder("Alice Johnson", 1001, "alice.j@example.com",
+                "123 Main St, Cityville", "555-1234", 5000.75);
+        AccountHolder holder2 = new AccountHolder("Bob Smith", 1002, "bob.s@example.com",
+                "456 Elm St, Townsville", "555-5678", 1500.50);
+
+        System.out.println(holder1);
+        System.out.println(holder2);
+    }
+}
