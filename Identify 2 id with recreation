@@ -1,0 +1,56 @@
+public class IdentityModel {
+
+    static class Person {
+        private String name;
+        private int id;
+        private String email;
+
+        public Person(String name, int id, String email) {
+            this.name = name;
+            this.id = id;
+            this.email = email;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "name='" + name + '\'' +
+                    ", id=" + id +
+                    ", email='" + email + '\'' +
+                    '}';
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        Person person1 = new Person("lewandowski", 1, "lewangoalski@hotmail.com");
+        Person person2 = new Person("harrymaguire", 2, "harrymaguire@outook.com");
+
+        System.out.println(person1);
+        System.out.println(person2);
+    }
+}
