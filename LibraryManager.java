@@ -6,7 +6,7 @@ class Book {
     String title;
     String ISBN;
     String author;
-    String dateOfPublish;
+    String dateOfPublish;   
 
     public Book(String title, String ISBN, String author, String dateOfPublish) {
         this.title = title;
