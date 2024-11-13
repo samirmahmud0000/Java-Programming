@@ -1,0 +1,33 @@
+import org.xbill.DNS.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.util.Base64;
+
+public class DNSServer {
+    private static final int PORT = 53;
+
+    public static void main(String[] args) throws Exception {
+        DatagramSocket socket = new DatagramSocket(PORT);
+        System.out.println("DNS Server is running on port " + PORT);
+
+        byte[] buffer = new byte[512];
+        while (true) {
+            DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+            socket.receive(packet);
+
+            Message request = new Message(packet.getData());
+            Record queryRecord = request.getQuestion();
+
+            String queryName = queryRecord.getName().toString(true);
+            String decodedMessage = new String(Base64.getUrlDecoder().decode(queryName.split("\\.")[0]));
+            System.out.println("Received message: " + decodedMessage);
+
+            Message response = request;
+            response.addRecord(Record.newRecord(queryRecord.getName(), Type.A, DClass.IN, 60, new ARecord(queryRecord.getName(), DClass.IN, 60, Address.getByName("127.0.0.1"))), Section.ANSWER);
+            
+            byte[] responseData = response.toWire();
+            packet = new DatagramPacket(responseData, responseData.length, packet.getAddress(), packet.getPort());
+            socket.send(packet);
+        }
+    }
+}
