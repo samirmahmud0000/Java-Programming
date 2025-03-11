@@ -1,0 +1,60 @@
+public class Animal {
+
+    static int leg = 4;
+    String color;
+
+    void makeSound() {
+        System.out.println("Animal is talking");
+    }
+
+    void display() {
+        System.out.println("Animal has " + leg + " Legs");
+    }
+
+    class Cat extends Animal {
+
+        int leg = 5;
+
+        public Cat(int a, int b) {
+            super.leg = a;
+            this.leg = b;
+        }
+
+        public Cat() {
+        }
+
+        @Override
+        void makeSound() {
+            System.out.println("Meow");
+        }
+
+        void display(int leg, String color) {
+            System.out.println("Cat has " + leg + " legs and is " + color);
+        }
+    }
+
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        animal.display();
+        animal.makeSound();
+
+        Animal.Cat cat = animal.new Cat(6, 7);
+        cat.makeSound();
+        cat.display(7, "Green");
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+
+        Animal.Cat cat = animal.new Cat(0, 4);
+
+        animal.display();
+        animal.makeSound();
+
+        cat.display(10, "Blue");
+        cat.display(6, "Green");
+        cat.display(2, "Magenta");
+    }
+}
