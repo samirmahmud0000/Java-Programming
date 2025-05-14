@@ -1,0 +1,11 @@
+web-security-cooperation/
+├── src/
+│   ├── LoginServlet.java
+│   ├── DashboardServlet.java
+│   ├── LogoutServlet.java
+│   └── UserDatabase.java
+├── WebContent/
+│   ├── login.html
+│   ├── dashboard.jsp
+│   └── WEB-INF/
+│       └── web.xml
