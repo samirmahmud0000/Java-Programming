@@ -3,5 +3,3 @@ server.ssl.key-store=classpath:keystore.p12
 server.ssl.key-store-password=yourpassword
 server.ssl.key-store-type=PKCS12
 server.ssl.key-alias=tomcat
-
-// Application properties
