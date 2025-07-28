@@ -1,0 +1,47 @@
+public class RecursionBasics {
+
+    public static int factorial(int n) {
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
+    }
+
+    public static int fibonacci(int n) {
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static String reverse(String str) {
+        if (str.isEmpty()) return str;
+        return reverse(str.substring(1)) + str.charAt(0);
+    }
+
+    public static int sum(int n) {
+        if (n == 0) return 0;  
+        return n + sum(n - 1); 
+    }
+
+    public static void printReverse(int n) {
+        if (n == 0) return;   
+        System.out.println(n);
+        printReverse(n - 1);  
+    }
+
+    public static void main(String[] args) {
+        int factResult = factorial(5);
+        System.out.println("Factorial of 5: " + factResult);
+
+        int fibResult = fibonacci(6);
+        System.out.println("Fibonacci of 6: " + fibResult);
+
+        String original = "hello";
+        String reversed = reverse(original);
+        System.out.println("Reversed string of 'hello': " + reversed);
+
+        int sumResult = sum(5);
+        System.out.println("Sum of first 5 numbers: " + sumResult);
+
+        System.out.println("Printing numbers from 5 to 1:");
+        printReverse(5);
+    }
+}
