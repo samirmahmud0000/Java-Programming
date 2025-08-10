@@ -13,10 +13,9 @@ public class ArrayTest {
 
         System.out.println(Arrays.toString(myArray));
 
-        //Array Initializer
 
-        int[] oneDArray = {1, 32, 33, 5, 7, 8}; //OK
-//        oneDArray = {2,3,45,6};//error - because initializer can only be used while declaring
+        int[] oneDArray = {1, 32, 33, 5, 7, 8};
+        oneDArray = {2,3,45,6};//error - because initializer can only be used while declaring
         oneDArray = new int[]{2, 3, 45, 6}; //works fine
 
         System.out.println(Arrays.toString(oneDArray));
