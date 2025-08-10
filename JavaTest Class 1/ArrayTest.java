@@ -15,15 +15,15 @@ public class ArrayTest {
 
 
         int[] oneDArray = {1, 32, 33, 5, 7, 8};
-        oneDArray = {2,3,45,6};//error - because initializer can only be used while declaring
-        oneDArray = new int[]{2, 3, 45, 6}; //works fine
+        oneDArray = {2,3,45,6};
+        oneDArray = new int[]{2, 3, 45, 6};
 
         System.out.println(Arrays.toString(oneDArray));
         System.out.println(oneDArray.length);
 
 
         int[][] twoDArray = new int[3][];
-//        System.out.println(twoDArray.length);
+        System.out.println(twoDArray.length);
         twoDArray[0] = new int[]{2,3,4,5};
         twoDArray[1] = new int[2];
         twoDArray[2] = new int[]{1,2,3};
